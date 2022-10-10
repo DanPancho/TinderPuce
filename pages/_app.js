@@ -1,8 +1,9 @@
 // import bootstrap
 import 'bootstrap/dist/css/bootstrap.css'
-import '../styles/globals.css'
+// import firebase
 
 function MyApp({ Component, pageProps }) {
+  // configuracion de conexion firebase
   return <Component {...pageProps} />
 }
 
