@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import alerts from "../../alerts/alerts";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../config";
+import LoginService from "../../../services/LoginServices/LoginService";
 
 const validationPassword = ValidationPassword();
 
@@ -27,6 +28,7 @@ const schema = yup.object().shape({
 });
 
 const NewRegister = () => {
+  const {signUp} = LoginService();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -38,24 +40,7 @@ const NewRegister = () => {
     onSubmit: (values) => onRegister(values),
   });
   const onRegister = (values) => {
-    console.log(values);
-    createUserWithEmailAndPassword(
-      auth,
-      formik.values.email,
-      formik.values.password
-    )
-      .then(() => {
-        alerts(
-          "center",
-          false,
-          false,
-          "success",
-          "Usuario registrado con exito"
-        );
-      })
-      .catch((e) => {
-        alerts("center", false, false, "error", "Usuario no se pudo registrar");
-      });
+    signUp(formik.values.email, formik.values.password)
   };
   return {
     formik,
