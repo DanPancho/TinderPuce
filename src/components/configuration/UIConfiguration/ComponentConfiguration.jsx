@@ -8,17 +8,17 @@ const ComponentConfiguration = () => {
   const {handleFile} = Configuration();
 
   return (
-    <section class="vh-100" style={{backgroundColor: '#c1ccd4'}}>
-    <div class="container py-5 h-100" >
-        <div class="row d-flex justify-content-center align-items-center h-100 ">
-          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div class="card bg-dark text-warning">
+    <section className="vh-100" style={{backgroundColor: '#c1ccd4'}}>
+    <div className="container py-5 h-100" >
+        <div className="row d-flex justify-content-center align-items-center h-100 ">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div className="card bg-dark text-warning">
               <div className="card-head text-center">
                 <h1>Configuracion del Perfil</h1>
               </div>
               <div className="text-center">
-                <div class=" mt-3 mb-3 container-border text-center">
-                  <Image class="rounded" src={"/img/USUARIOOSOJPG.jpg"} width={"200%"} height={"160%"}/>         
+                <div className=" mt-3 mb-3 container-border text-center">
+                  <Image className="rounded" src={"/img/USUARIOOSOJPG.jpg"} width={"200%"} height={"160%"}/>         
                 </div> 
               </div>
               <div className="card-body">
