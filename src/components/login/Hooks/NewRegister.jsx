@@ -33,7 +33,7 @@ const NewRegister = () => {
       cpassword: "",
     },
     validationSchema: schema,
-    onSubmit: (values) => onRegister(values),
+    onSubmit: () => onRegister(),
   });
   const onRegister = () => {
     signUp(formik.values.email, formik.values.password, formik.values.name)
