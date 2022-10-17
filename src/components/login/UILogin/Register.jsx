@@ -1,12 +1,16 @@
 import React from "react";
 import NewRegister from "../Hooks/NewRegister";
 import Image from "next/image";
+import {Helmet} from "react-helmet";
+
 
 const Register = () => {
   const { formik } = NewRegister();
   return (
-    <section class="vh-100" style={{backgroundColor: '#c1ccd4'}}>
      <div class="container py-5 h-100" >
+          <Helmet>
+                <style>{'body { background-color: #c1ccd4; }'}</style>
+          </Helmet>
           <div class="row d-flex justify-content-center align-items-center h-100 ">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
               <div class="card bg-dark text-warning">
@@ -81,7 +85,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </section>
   );
 };
 

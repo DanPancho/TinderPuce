@@ -1,6 +1,8 @@
 import React from "react";
 import Configuration from "../Hooks/Configuration";
 import Image from "next/image";
+import {Helmet} from "react-helmet";
+
 
 
 const ComponentConfiguration = () => {
@@ -8,8 +10,10 @@ const ComponentConfiguration = () => {
   const {handleFile} = Configuration();
 
   return (
-    <section class="vh-100" style={{backgroundColor: '#c1ccd4'}}>
     <div class="container py-5 h-100" >
+      <Helmet>
+                <style>{'body { background-color: #c1ccd4; }'}</style>
+      </Helmet>
         <div class="row d-flex justify-content-center align-items-center h-100 ">
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
             <div class="card bg-dark text-warning">
@@ -121,7 +125,6 @@ const ComponentConfiguration = () => {
             </div>
           </div>
       </div>
-    </section>
   );
 };
 

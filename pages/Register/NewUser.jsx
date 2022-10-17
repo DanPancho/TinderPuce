@@ -3,9 +3,7 @@ import Register from '../../src/components/login/UILogin/Register'
 
 const NewUser = () => {
   return (
-    <>
         <Register/>
-    </>
   )
 }
 
