@@ -5,13 +5,15 @@ import Image from "next/image";
 const InicioSesion = () => {
   const { formik, onRegister } = IniciarSesion();
   return (
-    
-        <div class="container py-5 h-100">
-          <div class="row d-flex justify-content-center align-items-center h-100">
+    <section class="vh-100" style={{backgroundColor: '#c1ccd4'}}>
+      <div class="container py-5 h-100" >
+          <div class="row d-flex justify-content-center align-items-center h-100 ">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <Image src={"/img/PUCETINDERJPG.jpg"} width={"600%"} height={"300%"}/> 
               <div class="card bg-dark text-warning">
-                  <form className="pt-5 px-5 form" onSubmit={formik.handleSubmit}>
+                <div class=" mt-3 mb-3 container-border text-center">
+                  <Image class="rounded" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}/>         
+                </div>
+                  <form className="px-5 form" onSubmit={formik.handleSubmit}>
                   <div className="mb-3">
                     
                     <label className="w-100 form-label">Correo Institucional:</label>
@@ -60,6 +62,7 @@ const InicioSesion = () => {
             </div>
           </div>
         </div>
+    </section>  
   );
 };
 
