@@ -21,7 +21,7 @@ export const IniciarSesion = () => {
       password: "",
     },
     validationSchema: schema,
-    onSubmit: (values) => onLogin(values),
+    onSubmit: () => onLogin(),
   });
 
   const onRegister = () => {
