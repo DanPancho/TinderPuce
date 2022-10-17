@@ -5,11 +5,14 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import alerts from "../../components/alerts/alerts";
+import crudService from "../crudServices/crudService";
+import Routes from "../../helpers/Routes";
 
+const { create, getOne } = crudService();
 const LoginService = () => {
-  const signUp = (email, password) => {
+  const signUp = (email, password, name) => {
     createUserWithEmailAndPassword(auth, email, password)
-      .then(async ({ user }) => {
+      .then(({ user }) => {
         // validar el correo del usuario
         if (!user.emailVerified) {
           sendEmailVerification(auth.currentUser).catch((e) => {
@@ -29,15 +32,56 @@ const LoginService = () => {
           "success",
           "Por favor, revisa tu correo electronico"
         );
+        // crear el usuario y sus datos personales iniciales
+        create(
+          {
+            name,
+            email,
+            carrer: '',
+            img: "https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png",
+            status: false,
+            likes: [],
+            matches: [],
+            gender: "",
+            preferences: "",
+            pleasures: [],
+          },
+          "users"
+        ).catch(() => {
+          alerts(
+            "center",
+            false,
+            false,
+            "error",
+            "Error al registrar el usuario"
+          );
+        });
       })
-      .catch(() => {});
+      .catch(() => {
+        alerts(
+          "center",
+          false,
+          false,
+          "error",
+          "Error al registrar el nuevo usuario"
+        );
+      });
   };
 
-  const signIn = (email, password) => {
+  const signIn = (email, password, router) => {
     signInWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
+      .then(async ({ user }) => {
         if (user.emailVerified) {
           alerts("top-end", true, false, "success", "Bienvenido !!");
+          // verificar el estado de su cuenta para redirecionar
+          const response = await getOne("users", "email", "==", email)
+          response.forEach((doc) => {
+            if(!doc.data().status){
+              router.push(`${Routes.CONFIGURATION}`)
+            }else{
+              console.log('Home');
+            }
+          })
         } else {
           alerts(
             "top-end",

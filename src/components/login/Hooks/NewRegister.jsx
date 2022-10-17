@@ -1,10 +1,6 @@
-import React from "react";
 import { ValidationPassword } from "../../../helpers/expressions/ValidationPassword";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import alerts from "../../alerts/alerts";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../../config";
 import LoginService from "../../../services/LoginServices/LoginService";
 
 const validationPassword = ValidationPassword();
@@ -39,8 +35,8 @@ const NewRegister = () => {
     validationSchema: schema,
     onSubmit: (values) => onRegister(values),
   });
-  const onRegister = (values) => {
-    signUp(formik.values.email, formik.values.password)
+  const onRegister = () => {
+    signUp(formik.values.email, formik.values.password, formik.values.name)
   };
   return {
     formik,

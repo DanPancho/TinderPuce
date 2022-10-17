@@ -1,5 +1,4 @@
-import React from "react";
-import { Formik, useFormik } from "formik";
+import { useFormik } from "formik";
 import * as yup from "yup";
 import { useRouter } from "next/router";
 import Routes from "../../../helpers/Routes";
@@ -15,7 +14,7 @@ const schema = yup.object().shape({
 
 export const IniciarSesion = () => {
   const router = useRouter();
-  const {signIn} = LoginService();
+  const { signIn } = LoginService();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -25,16 +24,15 @@ export const IniciarSesion = () => {
     onSubmit: (values) => onLogin(values),
   });
 
-  const onRegister  = () => {
-    router.push(`${Routes.REGISTER}`)
-  }
+  const onRegister = () => {
+    router.push(`${Routes.REGISTER}`);
+  };
 
-
-  const onLogin = (values) => {
-    signIn(formik.values.email, formik.values.password)
+  const onLogin = () => {
+    signIn(formik.values.email, formik.values.password,router);
   };
   return {
     formik,
-    onRegister
+    onRegister,
   };
 };
