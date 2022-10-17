@@ -21,8 +21,8 @@ const ComponentConfiguration = () => {
                 <h1>Configuracion del Perfil</h1>
               </div>
               <div className="text-center">
-                <div class=" mt-3 mb-3 container-border text-center">
-                  <Image class="rounded" src={"/img/USUARIOOSOJPG.jpg"} width={"200%"} height={"160%"}/>         
+                <div className=" mt-3 mb-3 container-border text-center">
+                  <Image className="rounded" src={"/img/USUARIOOSOJPG.jpg"} width={"200%"} height={"160%"}/>         
                 </div> 
               </div>
               <div className="card-body">

@@ -7,6 +7,7 @@ import {Helmet} from "react-helmet";
 const Register = () => {
   const { formik } = NewRegister();
   return (
+
      <div class="container py-5 h-100" >
           <Helmet>
                 <style>{'body { background-color: #c1ccd4; }'}</style>
@@ -16,6 +17,7 @@ const Register = () => {
               <div class="card bg-dark text-warning">
               <div class=" mt-3 mb-3 container-border text-center">
                   <Image class="rounded" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}/>         
+
               </div>
               <form className="px-5 form" onSubmit={formik.handleSubmit}>
                 <div className="mb-3">
