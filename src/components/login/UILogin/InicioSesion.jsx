@@ -15,7 +15,7 @@ const InicioSesion = () => {
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
               <div class="card bg-dark text-warning">
                 <div class=" mt-3 mb-3 container-border text-center">
-                  <Image class="rounded" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}/>         
+                  <Image class="rounded border border-primary" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}/>         
                 </div>
                   <form className="px-5 form" onSubmit={formik.handleSubmit}>
                   <div className="mb-3">
