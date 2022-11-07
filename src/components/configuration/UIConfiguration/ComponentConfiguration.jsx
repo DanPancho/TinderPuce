@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet";
 
 const ComponentConfiguration = () => {
   const { formik, handleFile } = Configuration();
-
   return (
     <div className="container py-5 h-100">
       <Helmet>
@@ -32,36 +31,48 @@ const ComponentConfiguration = () => {
                 <label className="mb-1">Cargar foto de perfil</label>
                 <input
                   id="fileLoader"
+                  name="fileLoader"
+                  accept="image/*"
                   type="file"
                   className="card bg-dark text-warning form-control"
-                  onChange={handleFile}
+                  onChange={formik.handleChange}
+                  onInput={handleFile}
                 />
+                <div id="imgHelp" className="form-text text-danger">
+                  {formik.errors.fileLoader}
+                </div>
               </div>
 
               <div className="form-floating">
                 <select
                   className="border border-primary card bg-dark text-warning form-select"
-                  id="idGenero"
+                  id="genero"
+                  name="genero"
+                  onChange={formik.handleChange}
                 >
-                  <option value={1}>Hombre</option>
-                  <option value={2}>Mujer</option>
-                  <option value={3}>Otros</option>
+                  <option value={"masculino"}>Masculino</option>
+                  <option value={"femenino"}>Femenino</option>
+                  <option value={"otros"}>Otros</option>
                 </select>
-                <label htmlFor="idGenero" className="">
+                <label htmlFor="genero" className="">
                   Selecciona tu género:{" "}
                 </label>
               </div>
 
               <div className="form-floating mt-4">
                 <select
-                  id="idGeneroP"
+                  id="generoPreferencia"
+                  name="generoPreferencia"
                   className="border border-primary card bg-dark text-warning form-select"
+                  onChange={formik.handleChange}
                 >
-                  <option value={1}>Hombre</option>
-                  <option value={2}>Mujer</option>
-                  <option value={3}>Ambos</option>
+                  <option value={"masculino"}>Masculino</option>
+                  <option value={"femenino"}>Femenino</option>
+                  <option value={"ambos"}>Ambos</option>
                 </select>
-                <label htmlFor="idGeneroP">Genero de preferencia:</label>
+                <label htmlFor="generoPreferencia">
+                  Genero de preferencia:
+                </label>
               </div>
               <form onSubmit={formik.handleSubmit}>
                 <div className="mt-3 form-floating">
@@ -79,13 +90,19 @@ const ComponentConfiguration = () => {
                     Ingresa la carrera que estudias:{" "}
                   </label>
                   <div id="carreraHelp" className="form-text text-danger">
-                    {formik.errors.carrera }
+                    {formik.errors.carrera}
                   </div>
                 </div>
-                <label className="mt-4">Gustos: </label>
+                <label className="mt-4 mb-2">Gustos: </label>
                 <div className="border border-primary input-group mb-3">
                   <div className="card bg-dark text-warning input-group-text">
-                    <input className="form-check-input" type="checkbox" />
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      name="gustos"
+                      value={"series"}
+                      onChange={formik.handleChange}
+                    />
                   </div>
                   <input
                     type="text"
@@ -96,7 +113,13 @@ const ComponentConfiguration = () => {
                 </div>
                 <div className="border border-primary input-group mb-3 mt-3">
                   <div className="card bg-dark text-warning input-group-text">
-                    <input type="checkbox" className="form-check-input" />
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      name="gustos"
+                      value={"deportes"}
+                      onChange={formik.handleChange}
+                    />
                   </div>
                   <input
                     type="text"
@@ -107,7 +130,13 @@ const ComponentConfiguration = () => {
                 </div>
                 <div className="border border-primary input-group mb-3 mt-3">
                   <div className="card bg-dark text-warning input-group-text">
-                    <input type="checkbox" className="form-check-input" />
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      name="gustos"
+                      value={"peliculas"}
+                      onChange={formik.handleChange}
+                    />
                   </div>
                   <input
                     type="text"
@@ -118,7 +147,13 @@ const ComponentConfiguration = () => {
                 </div>
                 <div className="border border-primary input-group mb-3 mt-3">
                   <div className="card bg-dark text-warning input-group-text">
-                    <input type="checkbox" className="form-check-input" />
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      name="gustos"
+                      value={"viajes"}
+                      onChange={formik.handleChange}
+                    />
                   </div>
                   <input
                     type="text"
@@ -129,7 +164,13 @@ const ComponentConfiguration = () => {
                 </div>
                 <div className="border border-primary input-group mb-3 mt-3">
                   <div className="card bg-dark text-warning input-group-text">
-                    <input type="checkbox" className="form-check-input" />
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      name="gustos"
+                      value={"estudios"}
+                      onChange={formik.handleChange}
+                    />
                   </div>
                   <input
                     type="text"
@@ -138,7 +179,10 @@ const ComponentConfiguration = () => {
                     className="card bg-dark text-warning form-control"
                   />
                 </div>
-                <div className="mb-4 col text-center">
+                <div id="gustosaHelp" className="form-text text-danger">
+                  {formik.errors.gustos}
+                </div>
+                <div className="mb-4 mt-4 col text-center">
                   <input
                     type="submit"
                     value="Guardar Perfil"

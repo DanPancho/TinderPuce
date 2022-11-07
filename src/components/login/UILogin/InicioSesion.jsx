@@ -17,7 +17,7 @@ const InicioSesion = () => {
                 <div className=" mt-3 mb-3 container-border text-center">
                   <Image className="rounded border border-primary" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}/>         
                 </div>
-                  <form className="px-5 form" onSubmit={formik.handleSubmit}>
+                  <form className="px-5 form" onSubmit={formik.handleSubmit} autoComplete={'off'}>
                   <div className="mb-3">
                     
                     <label className="w-100 form-label">Correo Institucional:</label>

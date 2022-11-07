@@ -3,10 +3,13 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
+  onAuthStateChanged,
+  getAuth
 } from "firebase/auth";
 import alerts from "../../components/alerts/alerts";
 import crudService from "../crudServices/crudService";
 import Routes from "../../helpers/Routes";
+import { async } from "@firebase/util";
 
 const { create, getOne } = crudService();
 const LoginService = () => {
@@ -45,6 +48,7 @@ const LoginService = () => {
             gender: "",
             preferences: "",
             pleasures: [],
+            uid:  getAuth().lastNotifiedUid
           },
           "users"
         ).catch(() => {
@@ -79,7 +83,7 @@ const LoginService = () => {
             if(!doc.data().status){
               router.push(`${Routes.CONFIGURATION}`)
             }else{
-              console.log('Home');
+              router.push(`${Routes.INIT}`)
             }
           })
         } else {
@@ -96,6 +100,15 @@ const LoginService = () => {
         alerts("top-end", true, false, "error", "Error al iniciar sesion !!");
       });
   };
+
+  const getUser = () => { 
+    onAuthStateChanged(auth, (user) => {
+      if(user)
+        return user.uid
+      else 
+        return undefined;
+    })
+  }
 
   return {
     signUp,
