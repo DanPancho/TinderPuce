@@ -6,7 +6,8 @@ import {
   query,
   setDoc,
   where,
-} from "firebase/firestore/lite";
+} from "firebase/firestore";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 import { db } from "../../../config";
 
 const crudService = () => {
@@ -21,14 +22,22 @@ const crudService = () => {
     const response = await getDocs(creationQuery);
     return response;
   };
-  const getUsuarios = async (nameCollecion, parameter, operacion, data, parameter2, operacion2, data2) => {
+  const getUsuarios = async (
+    nameCollecion,
+    parameter,
+    operacion,
+    data,
+    parameter2,
+    operacion2,
+    data2
+  ) => {
     //console.log(data2);
     const creationQuery = query(
       collection(db, nameCollecion),
-      where(parameter, operacion, data),
+      where(parameter, operacion, data)
       //where(parameter2, operacion2, data2),
     );
-    
+
     const response = await getDocs(creationQuery);
     return response;
   };
@@ -43,12 +52,28 @@ const crudService = () => {
     const docRef = doc(db, nameCollecion, idDoc);
     return await setDoc(docRef, data, { merge: true });
   };
+
+  const getById =  (nameCollecion, parameter, operacion, data) => {
+    const q = query(
+      collection(db, nameCollecion),
+      where(parameter, operacion, data)
+    );
+    const [result] = useCollectionData(q);
+    return result;
+  };
+
+  const getAll = (nameCollecion) => {
+    const [result] = useCollectionData(collection(db,nameCollecion));
+    return result;
+  }
   return {
     create,
     getOne,
     getID,
     update,
-    getUsuarios
+    getUsuarios,
+    getById,
+    getAll
   };
 };
 

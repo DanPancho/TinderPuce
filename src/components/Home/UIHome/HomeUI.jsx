@@ -1,34 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import HomeHook from "../Hooks/HomeHook";
+import UseHomeHook from "../Hooks/UseHomeHook";
 import { Ring } from "@uiball/loaders";
-import { async } from "@firebase/util";
 
-const Home = () => {
-  const { users, handleClickDB } = HomeHook();
-  const [user, setUser] = useState("");
-
-  const handleClick = async(data) => {
-    let aux = users;
-    if(data == 'unlike'){
-      await handleClickDB(data,users[0].uid,users[0].likes)
-    } 
-    aux.shift();
-    if (aux?.length) {
-      setUser(aux[0]);
-    }else{
-      setUser("");
-    }
-    
-
-  };
-  useEffect(() => {
-    //console.log('Efect');
-    if (users?.length) {
-      setUser(users[0]);
-    }
-  }, [users]);
-
+const HomeUI = () => {
+  const { preferences, handleClick } = UseHomeHook();
   return (
     <>
       <div className="container py-3 h-100">
@@ -42,19 +18,19 @@ const Home = () => {
             </div>
             <div className="card bg-dark text-warning mt-2">
               <div className="card-head text-center h-100">
-                {user !== "" ? (
+                {preferences !== "" && preferences?.length > 0? (
                   <>
                     <img
                       className="pt-4 pb-4"
-                      src={user?.img}
+                      src={preferences[0]?.img}
                       alt="img_user"
                       style={{ width: "90%", height: "70vh" }}
                     />
-                    <p>{user?.name}</p>
-                    <button onClick={() => handleClick("unlike")}>
+                    <p>{preferences[0]?.name}</p>
+                    <button onClick={() => handleClick("unlike",preferences[0]?.likes,preferences[0]?.uid )}>
                       UNLIKE
                     </button>
-                    <button onClick={() => handleClick("like")}>LIKE</button>
+                    <button onClick={() => handleClick("like", preferences[0]?.likes, preferences[0]?.uid, preferences[0].email)}>LIKE</button>
                   </>
                 ) : (
                   <Ring size={40} lineWeight={5} speed={2} color="#fff" />
@@ -68,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeUI;

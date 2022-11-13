@@ -1,10 +1,14 @@
-import React from 'react'
-import Home from './UIHome/Home'
+import React from "react";
+import NavBar from "../NavBar/NavBar";
+import HomeUI from "./UIHome/HomeUI";
 
 const MainHome = () => {
   return (
-    <Home />
-  )
-}
+    <>
+      <NavBar />
+      <HomeUI />
+    </>
+  );
+};
 
-export default MainHome
+export default MainHome;
