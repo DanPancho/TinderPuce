@@ -62,7 +62,7 @@ const ChatArea = () => {
       </div>
       <div
         className="w-100 bg-light"
-        style={{ height: "77vh", overflowY: "auto" , marginTop: '8.5%'}}
+        style={{ height: "77vh", overflowY: "auto", marginTop: '4.5em'}}
       >
         {messages?.length
           ? messages.map((mensaje) =>
