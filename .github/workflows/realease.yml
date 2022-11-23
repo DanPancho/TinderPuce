@@ -3,3 +3,8 @@ name: Release
 on: 
   pull_request:
     branches: [aws-actions]
+jobs:
+  release:
+    name: Release
+    steps: ls
+    
