@@ -21,6 +21,8 @@ jobs:
       - name: Build, tag and push
         env: 
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: TinderPuce
+          IMAGE_TAG: ${{ github.sha }}
         run: |
           ls
         
