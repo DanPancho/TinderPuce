@@ -7,7 +7,7 @@ import {
   setDoc,
   where,
 } from "firebase/firestore";
-import { useCollectionData } from "react-firebase-hooks/firestore";
+import { useCollectionData as  UseCollectionData} from "react-firebase-hooks/firestore";
 import { db } from "../../../config";
 
 const crudService = () => {
@@ -58,12 +58,12 @@ const crudService = () => {
       collection(db, nameCollecion),
       where(parameter, operacion, data)
     );
-    const [result] = useCollectionData(q);
+    const [result] = UseCollectionData(q);
     return result;
   };
 
   const getAll = (nameCollecion) => {
-    const [result] = useCollectionData(collection(db,nameCollecion));
+    const [result] = UseCollectionData(collection(db,nameCollecion));
     return result;
   }
   return {

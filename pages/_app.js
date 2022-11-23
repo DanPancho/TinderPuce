@@ -4,13 +4,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRouter } from "next/router";
 import { SSRProvider } from "react-bootstrap";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState as UseAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../config";
 import MainLogin from "../src/components/login/MainLogin";
 
 function MyApp({ Component, pageProps }) {
   // configuracion de conexion firebase
-  const [user, loading] = useAuthState(auth);
+  const [user, loading] = UseAuthState(auth);
   const router = useRouter();
   if (loading) {
     return (

@@ -10,7 +10,7 @@ import alerts from "../../components/alerts/alerts";
 import crudService from "../crudServices/crudService";
 import Routes from "../../helpers/Routes";
 import { async } from "@firebase/util";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState as UseAuthState} from "react-firebase-hooks/auth";
 
 const { create, getOne } = crudService();
 const LoginService = () => {
@@ -103,7 +103,7 @@ const LoginService = () => {
   };
 
   const getUser = () => { 
-    const [user] = useAuthState(auth)
+    const [user] = UseAuthState(auth)
     return user;
   }
 

@@ -4,9 +4,9 @@ import React, { useState, useRef, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState as UseAuthState  } from "react-firebase-hooks/auth";
 import {
-  useCollectionData,
+  useCollectionData as UseCollectionData ,
   useDocumentData,
 } from "react-firebase-hooks/firestore";
 import { auth, db } from "../../../config";
@@ -23,9 +23,9 @@ const ChatArea = () => {
   const [input, setInput] = useState("");
   const router = useRouter();
   const { id } = router.query;
-  const [user] = useAuthState(auth);
+  const [user] = UseAuthState(auth);
   const q = query(collection(db, `chats/${id}/messages`), orderBy("timestamp"));
-  const [messages] = useCollectionData(q);
+  const [messages] = UseCollectionData(q);
   const bottomOfChat = useRef();
 
   const sendMessage = async (e) => {
