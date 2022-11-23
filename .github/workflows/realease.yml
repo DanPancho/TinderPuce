@@ -21,8 +21,6 @@ jobs:
       - name: Build, tag and push
         env: 
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: tinderpuce
-          IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build -t tinderpuce .
         
