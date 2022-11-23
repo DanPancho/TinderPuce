@@ -18,8 +18,3 @@ jobs:
       - name: Inicio sesion
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-      - name: build, tag
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          run: |
-            ls
