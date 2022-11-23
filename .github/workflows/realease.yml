@@ -1,10 +1,26 @@
 name: Release
 
 on: 
-  pull_request:
-    branches: [aws-actions]
+  push:
+    branches:
+      - aws-actions
+
 jobs:
   release:
-    name: Release
-    steps: ls
-    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Credenciales AWS
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+              aws-access-key-id: AKIA4AVIDWXQ6GNKMC3Y
+              aws-secret-access-key: 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
+              aws-region: us-west-2
+      - name: Inicio sesion
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: build
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          run: |
+            ls
