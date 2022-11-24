@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import Image from "next/image";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState as UseAuthState} from "react-firebase-hooks/auth";
 import { auth, db } from "../../../config";
 import { collection, query, where } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 
 const SideBar = () => {
   const router = useRouter();
-  const [user] = useAuthState(auth);
+  const [user] = UseAuthState(auth);
   const q = query(
     collection(db, "chats"),
     where("users", "array-contains", user.email)

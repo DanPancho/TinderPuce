@@ -27,12 +27,12 @@ const HomeUI = () => {
                       alt="img_user"
                       style={{ width: "90%", height: "70vh" }}
                     />
-                    <p>{preferences[0]?.name}</p>
-                    <div className="d-flex" style={{justifyContent: 'space-around'}}>
+                    <h3>{preferences[0]?.name}</h3>
+                    <div className="d-flex" style={{justifyContent: 'space-around', margin: '1em'}}>
                       <Image
-                        width={70}
-                        height={70}
-                        src={"/img/unlike.png"}
+                        width={80}
+                        height={75}
+                        src={"/img/unlikeimg.png"}
                         onClick={() =>
                           handleClick(
                             "unlike",
@@ -42,9 +42,9 @@ const HomeUI = () => {
                         }
                       />
                       <Image
-                        width={70}
-                        height={70}
-                        src={"/img/like.png"}
+                        width={80}
+                        height={75}
+                        src={"/img/likeimg.png"}
                         onClick={() =>
                           handleClick(
                             "like",

@@ -9,13 +9,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Image from "next/image";
 import { auth, db } from "../../../config";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState as UseAuthState} from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { collection, query, where } from "firebase/firestore";
 import { useRouter } from "next/router";
 
 const SideBarResponsive = () => {
-  const [user] = useAuthState(auth);
+  const [user] = UseAuthState(auth);
   const router = useRouter();
   const q = query(
     collection(db, "chats"),
