@@ -5,7 +5,7 @@ import {Helmet} from "react-helmet";
 
 
 const Register = () => {
-  const { formik } = NewRegister();
+  const { formik, LinkHome} = NewRegister();
   return (
      <div className="container py-5 h-100" >
           <Helmet>
@@ -15,11 +15,11 @@ const Register = () => {
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
               <div className="card bg-dark text-warning">
               <div className=" mt-3 mb-3 container-border text-center">
-                  <Image className="border border-primary rounded" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}/>         
+                    <Image  onClick={LinkHome} className="border border-primary rounded" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}HTTP-EQUIV="REFRESH" CONTENT="5;URL=http://www.desarrolloweb.com"/>
               </div>
               <form className="px-5 form" onSubmit={formik.handleSubmit} autoComplete={'off'} >
                 <div className="mb-3">
-                  <label className="w-100 form-label">Nombre: </label>
+                  <label className="w-100 form-label" autocomplete="off">Nombre: </label>
                   <input
                     className="form-control"
                     type="text"
@@ -33,7 +33,7 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Correo Institucional: </label>
+                  <label className="form-label" autocomplete="off">Correo Institucional: </label>
                   <input
                     className="form-control"
                     type="email"
@@ -47,7 +47,7 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Contraseña: </label>
+                  <label className="form-label" autocomplete="off">Contraseña: </label>
                   <input
                     className="form-control"
                     type="password"
@@ -61,7 +61,7 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Confirmación de Contraseña: </label>
+                  <label className="form-label" autocomplete="off">Confirmación de Contraseña: </label>
                   <input
                     className="form-control"
                     type="password"

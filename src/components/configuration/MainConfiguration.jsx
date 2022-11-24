@@ -1,5 +1,5 @@
-import React from 'react'
-import ComponentConfiguration from './UIConfiguration/ComponentConfiguration'
+import React from 'react';
+import ComponentConfiguration from './UIConfiguration/ComponentConfiguration';
 
 const MainConfiguration = () => {
   return (

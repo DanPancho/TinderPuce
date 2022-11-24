@@ -3,7 +3,9 @@ const publicRoutes = {
     LOGIN: '/login',
     REGISTER: '/Register/NewUser',
     CONFIGURATION: '/configuration',
-    INIT: '/Home'
+    INIT: '/Home',
+    CHAT: '/Chat',
+    QUIENESSOMOS: '/Quienessomos'
 }
 
 const Routes = {

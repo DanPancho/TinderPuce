@@ -101,6 +101,9 @@ const LoginService = () => {
         alerts("top-end", true, false, "error", "Error al iniciar sesion !!");
       });
   };
+  const ConfirmPassword = () =>{
+
+  }
 
   const getUser = () => { 
     const [user] = useAuthState(auth)

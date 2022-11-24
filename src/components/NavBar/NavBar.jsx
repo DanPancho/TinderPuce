@@ -24,7 +24,7 @@ const NavBar = () => {
             <Nav className="me-auto">
               <Nav.Link href="/Home">Home</Nav.Link>
               <Nav.Link href="/Chat">Chats</Nav.Link>
-              <Nav.Link href="/">Quíenes somos?</Nav.Link>
+              <Nav.Link href="/Quienessomos">Quíenes somos?</Nav.Link>
               <Nav.Link
                 onClick={async () => {
                   const success = await signOut();

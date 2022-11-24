@@ -31,8 +31,12 @@ export const IniciarSesion = () => {
   const onLogin = () => {
     signIn(formik.values.email, formik.values.password,router);
   };
+  const LinkHome = () => {
+    router.push(`${Routes.HOME}`)
+  };
   return {
     formik,
     onRegister,
+    LinkHome,
   };
 };

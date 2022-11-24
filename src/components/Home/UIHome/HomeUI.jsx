@@ -14,7 +14,7 @@ const HomeUI = () => {
         </Helmet>
         <div className="row d-flex justify-content-center align-items-center h-100 ">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div className="bg-dark text-center text-warning p-1">
+            <div className="bg-dark text-center text-warning p-1 rounded">
               <h1>Posibles Match</h1>
             </div>
             <div className="card bg-dark text-warning mt-2">
