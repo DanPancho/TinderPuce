@@ -5,9 +5,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useAuthState as UseAuthState } from "react-firebase-hooks/auth";
-import {
-  useCollectionData as UseCollectionData
-} from "react-firebase-hooks/firestore";
+import { useCollectionData as UseCollectionData } from "react-firebase-hooks/firestore";
 import { auth, db } from "../../../config";
 import {
   collection,
@@ -17,9 +15,12 @@ import {
   addDoc,
 } from "firebase/firestore";
 import SideBarResponsive from "../SideBar/SideBarResponsive";
+import { Collapse } from "react-bootstrap";
+import Image from "next/image";
 
 const ChatArea = () => {
   const [input, setInput] = useState("");
+  const [open, setOpen] = useState(false);
   const router = useRouter();
   const { id } = router.query;
   const [user] = UseAuthState(auth);
@@ -27,10 +28,10 @@ const ChatArea = () => {
   const [messages] = UseCollectionData(q);
   const bottomOfChat = useRef();
 
-  const sendMessage = async (e) => {
-    e.preventDefault();
+  const sendMessage = async (e, dataAux = '') => {
+    e !== '' && e.preventDefault();
     await addDoc(collection(db, `chats/${id}/messages`), {
-      text: input,
+      text: dataAux==='' ? input : dataAux,
       sender: user.email,
       timestamp: serverTimestamp(),
     });
@@ -61,7 +62,7 @@ const ChatArea = () => {
       </div>
       <div
         className="w-100 bg-light"
-        style={{ height: "77vh", overflowY: "auto", marginTop: '4.5em'}}
+        style={{ height: "77vh", overflowY: "auto", marginTop: "4.5em" }}
       >
         {messages?.length
           ? messages.map((mensaje) =>
@@ -104,7 +105,58 @@ const ChatArea = () => {
                 value={input}
               />
               <Button>Button</Button>
+              <Button
+                className="btn-secondary"
+                onClick={() => setOpen(!open)}
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
+              >
+                Frases L.Señas
+              </Button>
             </InputGroup>
+            {open && (
+              <div
+                style={{ height: "40vh", overflowY: "auto" }}
+                className={"bg-light"}
+              >
+                <div className="d-flex justify-content-center">
+                  <Image
+                    src={"/img/saludo.gif"}
+                    width={500}
+                    height={300}
+                    style={{ cursor: "pointer" }}
+                    onClick={()=>sendMessage('','Hola!')}
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <Image
+                    src={"/img/pedirNumero.gif"}
+                    width={500}
+                    height={300}
+                    style={{ cursor: "pointer" }}
+                    onClick={()=>sendMessage('','¿Me puedes pasar tu número de WhatsApp?')}
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <Image
+                    src={"/img/estudias.gif"}
+                    width={500}
+                    height={300}
+                    style={{ cursor: "pointer" }}
+                    onClick={()=>sendMessage('','¿tu estudias o trabajas?')}
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <Image
+                    src={"/img/Adios.png"}
+                    width={500}
+                    height={300}
+                    style={{ cursor: "pointer" }}
+                    onClick={()=>sendMessage('','Adios!')}
+                  />
+                </div>
+              </div>
+            )}
           </form>
         </div>
       </div>
