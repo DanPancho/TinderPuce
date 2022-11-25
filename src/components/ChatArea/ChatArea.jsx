@@ -15,7 +15,6 @@ import {
   addDoc,
 } from "firebase/firestore";
 import SideBarResponsive from "../SideBar/SideBarResponsive";
-import { Collapse } from "react-bootstrap";
 import Image from "next/image";
 
 const ChatArea = () => {
@@ -27,6 +26,7 @@ const ChatArea = () => {
   const q = query(collection(db, `chats/${id}/messages`), orderBy("timestamp"));
   const [messages] = UseCollectionData(q);
   const bottomOfChat = useRef();
+  console.log(messages);
 
   const sendMessage = async (e, dataAux = '') => {
     e !== '' && e.preventDefault();
@@ -58,7 +58,7 @@ const ChatArea = () => {
         }}
       >
         <SideBarResponsive />
-        <h3 className="text-white pt-3">Susana Oria </h3>
+        <h3 className="text-white pt-3">Chat Area </h3>
       </div>
       <div
         className="w-100 bg-light"
@@ -119,7 +119,7 @@ const ChatArea = () => {
                 style={{ height: "40vh", overflowY: "auto" }}
                 className={"bg-light"}
               >
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center mb-4">
                   <Image
                     src={"/img/saludo.gif"}
                     width={500}
@@ -128,7 +128,7 @@ const ChatArea = () => {
                     onClick={()=>sendMessage('','Hola!')}
                   />
                 </div>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center mb-4">
                   <Image
                     src={"/img/pedirNumero.gif"}
                     width={500}
@@ -137,7 +137,7 @@ const ChatArea = () => {
                     onClick={()=>sendMessage('','¿Me puedes pasar tu número de WhatsApp?')}
                   />
                 </div>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center mb-4">
                   <Image
                     src={"/img/estudias.gif"}
                     width={500}
@@ -146,7 +146,7 @@ const ChatArea = () => {
                     onClick={()=>sendMessage('','¿tu estudias o trabajas?')}
                   />
                 </div>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center mb-4">
                   <Image
                     src={"/img/Adios.png"}
                     width={500}

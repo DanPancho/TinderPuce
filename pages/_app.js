@@ -2,6 +2,7 @@
 import { Ring } from "@uiball/loaders";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { SSRProvider } from "react-bootstrap";
 import { useAuthState as UseAuthState } from "react-firebase-hooks/auth";
@@ -20,9 +21,12 @@ function MyApp({ Component, pageProps }) {
     );
   }
 
-  if (!user && !router.pathname.includes('Register')) {
+  if (!user && !router.pathname.includes("Register")) {
     return (
       <SSRProvider>
+        <Head>
+          <link rel="manifest" href="/manifest.json" />
+        </Head>
         <MainLogin />
       </SSRProvider>
     );
@@ -30,6 +34,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <SSRProvider>
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+      </Head>
       <Component {...pageProps} />
     </SSRProvider>
   );

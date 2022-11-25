@@ -17,9 +17,9 @@ const Register = () => {
               <div className=" mt-3 mb-3 container-border text-center">
                     <Image  onClick={LinkHome} className="border border-primary rounded" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}HTTP-EQUIV="REFRESH" CONTENT="5;URL=http://www.desarrolloweb.com"/>
               </div>
-              <form className="px-5 form" onSubmit={formik.handleSubmit} autoComplete={'off'} >
+              <form className="px-5 form" onSubmit={formik.handleSubmit} autoComplete={'off'}  >
                 <div className="mb-3">
-                  <label className="w-100 form-label" autocomplete="off">Nombre: </label>
+                  <label className="w-100 form-label" >Nombre: </label>
                   <input
                     className="form-control"
                     type="text"
@@ -33,7 +33,7 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label className="form-label" autocomplete="off">Correo Institucional: </label>
+                  <label className="form-label" >Correo Institucional: </label>
                   <input
                     className="form-control"
                     type="email"
@@ -47,7 +47,7 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label className="form-label" autocomplete="off">Contraseña: </label>
+                  <label className="form-label" >Contraseña: </label>
                   <input
                     className="form-control"
                     type="password"
@@ -61,7 +61,7 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label className="form-label" autocomplete="off">Confirmación de Contraseña: </label>
+                  <label className="form-label" >Confirmación de Contraseña: </label>
                   <input
                     className="form-control"
                     type="password"

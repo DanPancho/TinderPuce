@@ -38,7 +38,9 @@ const SideBar = () => {
               <ListGroup.Item action className="mb-2" key={index}>
                 <div className="d-flex">
                   <div style={{ marginLeft: "4.5%" }}>
-                    {data?.users.map(
+                    {
+                      data?.users ? 
+                    data?.users.map(
                       (dataUser, index) =>
                         dataUser !== user.email && (
                           <div
@@ -57,7 +59,9 @@ const SideBar = () => {
                             {dataUser}
                           </div>
                         )
-                    )}
+                    ):<>
+                      <h3>Ve a home y busca tu match</h3>
+                    </>}
                   </div>
                 </div>
               </ListGroup.Item>
