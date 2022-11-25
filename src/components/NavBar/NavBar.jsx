@@ -18,15 +18,48 @@ const NavBar = () => {
     <>
       <Navbar expand="lg" className={"navbar-dark bg-dark"}>
         <Container>
-          <Navbar.Brand href="#home">TinderPuce</Navbar.Brand>
+          <Navbar.Brand>TinderPuce</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/Home">Home</Nav.Link>
-              <Nav.Link href="/configuration"> Configuración </Nav.Link>
-              <Nav.Link href="/Chat">Chats</Nav.Link>
-              <Nav.Link href="/Quienessomos">Quíenes somos?</Nav.Link>
+              <button
+                className="btn"
+                style={{ color: "#fff" }}
+                onClick={() => {
+                  router.push(`/${Routes.INIT}`);
+                }}
+              >
+                Home
+              </button>
+              <button
+                className="btn"
+                style={{ color: "#fff" }}
+                onClick={() => {
+                  router.push(`${Routes.CHAT}`);
+                }}
+              >
+                Chats
+              </button>
+              <button
+                className="btn"
+                style={{ color: "#fff" }}
+                onClick={() => {
+                  router.push(`${Routes.CONFIGURATION}`);
+                }}
+              >
+                Configuración
+              </button>
+              <button
+                className="btn"
+                style={{ color: "#fff" }}
+                onClick={() => {
+                  router.push(`${Routes.QUIENESSOMOS}`);
+                }}
+              >
+                Configuración
+              </button>
               <Nav.Link
+                style={{color:'#fff'}}
                 onClick={async () => {
                   const success = await signOut();
                   if (!success) {
