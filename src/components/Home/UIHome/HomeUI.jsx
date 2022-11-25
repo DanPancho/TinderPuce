@@ -21,7 +21,7 @@ const HomeUI = () => {
               <div className="card-head text-center h-100">
                 {preferences !== "" && preferences?.length > 0 ? (
                   <>
-                    <Image
+                    <img
                       className="pt-4 pb-4"
                       src={preferences[0]?.img}
                       alt="img_user"
