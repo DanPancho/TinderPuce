@@ -56,7 +56,7 @@ const NavBar = () => {
                   router.push(`${Routes.QUIENESSOMOS}`);
                 }}
               >
-                Configuración
+                ¿Quiénes somos?
               </button>
               <Nav.Link
                 style={{color:'#fff'}}
