@@ -5,10 +5,10 @@ import { storage } from "../../../../config";
 import alerts from "../../alerts/alerts";
 import { useState } from "react";
 import { v4 } from "uuid";
-import crudService from "../../../services/crudServices/crudService";
+import crudService from "../../../Services/crudServices/crudService";
 import { getAuth } from "firebase/auth";
 import { useRouter } from "next/router";
-import Routes from "../../../helpers/Routes";
+import Routes from "../../../Helpers/Routes";
 
 const schema = yup.object().shape({
   carrera: yup.string().required("Por favor ingresar una carrera"),

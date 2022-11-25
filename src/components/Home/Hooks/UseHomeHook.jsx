@@ -1,8 +1,8 @@
 import { addDoc, collection } from "firebase/firestore";
 import React from "react";
 import { db } from "../../../../config";
-import crudService from "../../../services/crudServices/crudService";
-import LoginService from "../../../services/LoginServices/LoginService";
+import crudService from "../../../Services/crudServices/crudService";
+import LoginService from "../../../Services/LoginServices/LoginService";
 import alerts from "../../alerts/alerts";
 
 const UseHomeHook = () => {
