@@ -15,7 +15,7 @@ const Register = () => {
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
               <div className="card bg-dark text-warning">
               <div className=" mt-3 mb-3 container-border text-center">
-                    <Image  onClick={LinkHome} className="border border-primary rounded" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}HTTP-EQUIV="REFRESH" CONTENT="5;URL=http://www.desarrolloweb.com"/>
+                    <Image alt='img'  onClick={LinkHome} className="border border-primary rounded" src={"/img/PUCETINDERJPG.jpg"} width={"230%"} height={"150%"}HTTP-EQUIV="REFRESH" CONTENT="5;URL=http://www.desarrolloweb.com"/>
               </div>
               <form className="px-5 form" onSubmit={formik.handleSubmit} autoComplete={'off'}  >
                 <div className="mb-3">

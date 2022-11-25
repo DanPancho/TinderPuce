@@ -23,6 +23,7 @@ const ComponentConfiguration = () => {
                   src={"/img/USUARIOOSOJPG.jpg"}
                   width={"200%"}
                   height={"160%"}
+                  alt='img'
                 />
               </div>
             </div>

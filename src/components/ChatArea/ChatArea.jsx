@@ -126,6 +126,7 @@ const ChatArea = () => {
                     height={300}
                     style={{ cursor: "pointer" }}
                     onClick={()=>sendMessage('','Hola!')}
+                    alt='img'
                   />
                 </div>
                 <div className="d-flex justify-content-center mb-4">
@@ -135,6 +136,7 @@ const ChatArea = () => {
                     height={300}
                     style={{ cursor: "pointer" }}
                     onClick={()=>sendMessage('','¿Me puedes pasar tu número de WhatsApp?')}
+                    alt='img'
                   />
                 </div>
                 <div className="d-flex justify-content-center mb-4">
@@ -144,6 +146,7 @@ const ChatArea = () => {
                     height={300}
                     style={{ cursor: "pointer" }}
                     onClick={()=>sendMessage('','¿tu estudias o trabajas?')}
+                    alt='img'
                   />
                 </div>
                 <div className="d-flex justify-content-center mb-4">
@@ -152,6 +155,7 @@ const ChatArea = () => {
                     width={500}
                     height={300}
                     style={{ cursor: "pointer" }}
+                    alt='img'
                     onClick={()=>sendMessage('','Adios!')}
                   />
                 </div>

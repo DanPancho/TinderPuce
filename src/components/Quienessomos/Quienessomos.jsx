@@ -10,19 +10,19 @@ const Quienessomos = () => {
             </div>
             <div className="container d-flex aligns-items-center justify-content-center pt-5">
                 <div className="col-md-2 d-flex aligns-items-center justify-content-center" >
-                    <Image className="rounded border border-primary" src={"/img/app1.jpg"} width={"230%"} height={"150%"}/>  
+                    <Image alt='img' className="rounded border border-primary" src={"/img/app1.jpg"} width={"230%"} height={"150%"}/>  
                 </div>
                 <div className="col-md-2 d-flex aligns-items-center justify-content-center ms-5">
-                    <Image className="rounded border border-primary" src={"/img/app2.webp"} width={"230%"} height={"150%"}/>         
+                    <Image alt='img' className="rounded border border-primary" src={"/img/app2.webp"} width={"230%"} height={"150%"}/>         
                 </div>
             </div>
             <div className="container d-flex aligns-items-center justify-content-center pt-5">
             
                 <div className="col-md-2 d-flex aligns-items-center justify-content-center">
-                    <Image className="rounded border border-primary" src={"/img/app3.jpg"} width={"230%"} height={"150%"}/>         
+                    <Image alt='img' className="rounded border border-primary" src={"/img/app3.jpg"} width={"230%"} height={"150%"}/>         
                 </div>
                 <div className="col-md-2 d-flex aligns-items-center justify-content-center ms-5">
-                    <Image className="rounded border border-primary" src={"/img/app4.jpg"} width={"230%"} height={"150%"}/>         
+                    <Image alt='img' className="rounded border border-primary" src={"/img/app4.jpg"} width={"230%"} height={"150%"}/>         
                 </div>
             </div>
         </div>
