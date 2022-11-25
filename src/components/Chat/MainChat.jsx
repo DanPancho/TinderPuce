@@ -1,7 +1,7 @@
 import React from "react";
-import ChatArea from "../ChatArea/ChatArea";
+import ChatArea from "../chatarea/ChatArea";
 import NavBar from "../NavBar/NavBar";
-import SideBarResponsive from "../SideBar/SideBarResponsive";
+import SideBarResponsive from "../sidebar/SideBarResponsive";
 
 const MainChat = () => {
   return (

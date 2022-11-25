@@ -1,5 +1,5 @@
 
-import MainLogin from "../src/components/Login/MainLogin";
+import MainLogin from "../src/components/login/MainLogin";
 
 // Login
 export default function Home() {

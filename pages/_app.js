@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { SSRProvider } from "react-bootstrap";
 import { useAuthState as UseAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../config";
-import MainLogin from "../src/components/Login/MainLogin";
+import MainLogin from "../src/components/login/MainLogin";
 
 function MyApp({ Component, pageProps }) {
   // configuracion de conexion firebase

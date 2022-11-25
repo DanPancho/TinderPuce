@@ -1,8 +1,8 @@
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useRouter } from "next/router";
-import Routes from "../../../Helpers/Routes";
-import LoginService from "../../../Services/LoginServices/LoginService";
+import Routes from "../../../helpers/Routes";
+import LoginService from "../../../services/LoginServices/LoginService";
 
 const schema = yup.object().shape({
   email: yup

@@ -1,8 +1,8 @@
-import { ValidationPassword } from "../../../Helpers/expressions/ValidationPassword";
+import { ValidationPassword } from "../../../helpers/expressions/ValidationPassword";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import Routes from "../../../Helpers/Routes";
-import LoginService from "../../../Services/LoginServices/LoginService";
+import Routes from "../../../helpers/Routes";
+import LoginService from "../../../services/LoginServices/LoginService";
 import Router from "next/router";
 import { useRouter } from "next/router";
 

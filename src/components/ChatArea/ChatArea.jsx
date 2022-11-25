@@ -14,7 +14,7 @@ import {
   serverTimestamp,
   addDoc,
 } from "firebase/firestore";
-import SideBarResponsive from "../SideBar/SideBarResponsive";
+import SideBarResponsive from "../sidebar/SideBarResponsive";
 import Image from "next/image";
 
 const ChatArea = () => {
