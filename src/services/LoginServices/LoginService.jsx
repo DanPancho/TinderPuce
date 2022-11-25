@@ -7,7 +7,7 @@ import {
   getAuth
 } from "firebase/auth";
 import alerts from "../../components/alerts/alerts";
-import crudService from "../CrudServices/crudService";
+import crudService from "../crudServices/crudService";
 import Routes from "../../helpers/Routes";
 import { async } from "@firebase/util";
 import { useAuthState as UseAuthState } from "react-firebase-hooks/auth";

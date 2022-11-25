@@ -1,7 +1,7 @@
 import { addDoc, collection } from "firebase/firestore";
 import React from "react";
 import { db } from "../../../../config";
-import crudService from "../../../services/CrudServices/crudService";
+import crudService from "../../../services/crudServices/crudService";
 import LoginService from "../../../services/LoginServices/LoginService";
 import alerts from "../../alerts/alerts";
 

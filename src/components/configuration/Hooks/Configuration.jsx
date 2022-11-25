@@ -5,7 +5,7 @@ import { storage } from "../../../../config";
 import alerts from "../../alerts/alerts";
 import { useState } from "react";
 import { v4 } from "uuid";
-import crudService from "../../../services/CrudServices/crudService";
+import crudService from "../../../services/crudServices/crudService";
 import { getAuth } from "firebase/auth";
 import { useRouter } from "next/router";
 import Routes from "../../../helpers/Routes";
