@@ -33,7 +33,7 @@ const InicioSesion = () => {
                     </div>
                   </div>
                   <div className="mb-3">
-                    <label className="form-label" >Contraseña:</label>
+                    <label className="form-label" >Contrasenaaa:</label>
                     <input
                       className="form-control"
                       type="password"
