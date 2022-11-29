@@ -1,5 +1,5 @@
 import React from "react";
-import { IniciarSesion } from "../hooks/IniciarSesion";
+import { IniciarSesion } from "../Hooks/IniciarSesion";
 import Image from "next/image";
 import {Helmet} from "react-helmet";
 
