@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  build_and_test:
+    executor: node/default
+    steps:
+      - checkout
+      - run:
+        name: Instalcion de dependecias
+        command: npm i
+workflows:
+  deploy_app:
+    jobs:
+      - build_and_test
+      
