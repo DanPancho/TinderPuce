@@ -58,8 +58,9 @@ const NavBar = () => {
               >
                 ¿Quiénes somos?
               </button>
-              <Nav.Link
-                style={{color:'#fff'}}
+              <button
+                className="btn"
+                style={{ color: "#fff" }}
                 onClick={async () => {
                   const success = await signOut();
                   if (!success) {
@@ -74,7 +75,7 @@ const NavBar = () => {
                 }}
               >
                 Cerrar Sesión
-              </Nav.Link>
+              </button>
             </Nav>
           </Navbar.Collapse>
         </Container>
