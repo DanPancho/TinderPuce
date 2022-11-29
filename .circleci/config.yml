@@ -5,8 +5,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Instalcion dependecias
-        command: npm i
+          name: Instalcion dependecias
+          command: npm i
 workflows:
   deploy_app:
     jobs:
