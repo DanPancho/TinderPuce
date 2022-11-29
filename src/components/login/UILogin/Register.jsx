@@ -33,7 +33,7 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label className="form-label" >Correo Electronico: </label>
+                  <label className="form-label" >Correo electronico: </label>
                   <input
                     className="form-control"
                     type="email"

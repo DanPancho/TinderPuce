@@ -19,7 +19,7 @@ const InicioSesion = () => {
                 </div>
                   <form className="px-5 form" onSubmit={formik.handleSubmit} autoComplete={'off'}>
                   <div className="mb-3">
-                    <label className="w-100 form-label" >Correo Electronico:</label>
+                    <label className="w-100 form-label" >Correo electronico:</label>
                     <input
                       className="form-control"
                       type="email"
