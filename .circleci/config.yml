@@ -12,7 +12,7 @@ jobs:
           name: Instalcion dependecias
           command: npm i && npm install --save-dev firebase-tools
       - run:
-          command: npm run build
+          command: npm run build && npm run export
       - run:
           name: deploy
           command: ./node_modules/.bin/firebase deploy --token=1//05zhurgPHzk2PCgYIARAAGAUSNwF-L9IrKr9nnsTEfWWoAzgUzwq6wNb_UNKU6d3MXd6IV1LcqJX9cI_WRuPbAqgwBMbM-a-0j2Y
