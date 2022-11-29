@@ -12,13 +12,13 @@ jobs:
       - run:
           name: build
           command: npm run build && npm run export
-    deploy:
-      executor: node/default
-      steps:
-        - checkout
-        - run:
-            name: deploy app
-            command: firebase deploy
+  deploy:
+    executor: node/default
+    steps:
+      - checkout
+      - run:
+          name: deploy app
+          command: firebase deploy
 workflows:
   deploy_app:
     jobs:
@@ -30,4 +30,3 @@ workflows:
             branches:
               only:
                 - main
-      
