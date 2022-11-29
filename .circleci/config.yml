@@ -9,8 +9,25 @@ jobs:
       - run:
           name: Instalcion dependecias
           command: npm i
+      - run:
+          name: build
+          command: npm run build && npm run export
+    deploy:
+      executor: node/default
+      steps:
+        - checkout
+        - run:
+            name: deploy app
+            command: firebase deploy
 workflows:
   deploy_app:
     jobs:
       - build_and_test
+      - deploy:
+          requires:
+            - build_and_test
+          filters:
+            branches:
+              only:
+                - main
       
